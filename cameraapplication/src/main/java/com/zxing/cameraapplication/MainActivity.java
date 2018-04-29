@@ -21,21 +21,13 @@ import com.cjt2325.cameralibrary.util.DeviceUtil;
 public class MainActivity extends AppCompatActivity {
     private final int GET_PERMISSION_REQUEST = 100; //权限申请自定义码
     private ImageView photo;
-    private TextView device;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getPermissions();
-            }
-        });
         photo = (ImageView) findViewById(R.id.image_photo);
-        device = (TextView) findViewById(R.id.device);
-        device.setText(DeviceUtil.getDeviceInfo());
+        getPermissions();
     }
 
     /**
